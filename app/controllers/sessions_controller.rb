@@ -13,11 +13,12 @@ class SessionsController < ApplicationController
       flash.now[:error] = "There was something wrong with your login information"
       render 'new'
     end
+  end
 
   def destroy
-      session[:user_id] = nil
-      flash[:success] = "You have successfully logged out"
-      redirect_to login_path
-    end
+    session[:user_id] = nil
+    flash[:success] = "You have successfully logged out"
+    redirect_to login_path
+  end
 
 end
